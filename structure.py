@@ -327,13 +327,3 @@ options = {
     "description": "Print Ark version, file format version and min supported file format version"
     }
 }
-
-positionals = [
-    {
-        "name": "input",
-        "type": "file",
-        "description": "Input file",
-        "required": True
-    }
-]
-
