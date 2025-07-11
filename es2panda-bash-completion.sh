@@ -10,7 +10,7 @@ _es2panda() {
     # Write your own path
     # Example /Users/emirhanday/Documents/es2panda-bash-completion/completion.py
 
-    out="$(python3 /Users/emirhanday/Documents/es2panda-bash-completion/completion.py "${COMP_WORDS[@]}")"
+    out="$(python3 /home/ewx1438531/Documents/es2panda-bash-completion/completion.py "${COMP_WORDS[@]}")"
     COMPREPLY=( $(compgen -W "${out}" -- "$cur") )
 
 }

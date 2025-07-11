@@ -8,25 +8,8 @@
 import sys, os, textwrap
 from structure import options  # aynı klasördeki metadata
 
-# ─────────────────────────  HELP MODU  ─────────────────────────
-if len(sys.argv) <= 1 or sys.argv[1] in ("-h", "--help"):
-    def render(opt_dict, indent=0):
-        pad = "  " * indent
-        for k, meta in opt_dict.items():
-            desc = meta.get("description", "")
-            default = meta.get("default", None)
-            line = f"{pad}{k:<16} : {desc}"
-            if default not in (None, "", [], False):
-                line += f" (default: {default})"
-            print(textwrap.fill(line, subsequent_indent=pad + "  ", width=90))
-            if meta.get("type") == "group":
-                print(f"{pad}  Sub-arguments:")
-                render(meta["sub"], indent + 2)
-    print("\nes2panda – Available options\n" + "-" * 35)
-    render(options)
-    sys.exit(0)
 
-# ───────────────────  COMPLETION MOD (CALLS BASH) ───────────────────
+# COMPLETION MOD (CALLS BASH)
 args = sys.argv[1:]
 cur  = args[-1] if args else ""
 prev = args[-2] if len(args) > 1 else ""
