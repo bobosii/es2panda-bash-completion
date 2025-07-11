@@ -2,7 +2,6 @@
 """
 Çift amaçlı:
 1) Bash completion:  python3 completion.py <COMP_WORDS...>
-2) Help :  python3 completion.py --help
 """
 
 import sys, os, textwrap
